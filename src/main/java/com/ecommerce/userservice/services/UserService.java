@@ -9,4 +9,8 @@ public interface UserService {
 
     public User signUp(String name, String email, String password);
 
+    public User validateToken(String tokenValue);
+
+    public void logout(String tokenValue);
+
 }
