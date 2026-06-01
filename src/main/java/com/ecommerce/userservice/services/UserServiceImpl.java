@@ -5,6 +5,7 @@ import com.ecommerce.userservice.models.User;
 import com.ecommerce.userservice.repositories.TokenRepository;
 import com.ecommerce.userservice.repositories.UserRepository;
 import org.apache.commons.lang3.RandomStringUtils;
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -89,6 +90,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public void logout(String tokenValue) {
 
+//        Set the expiry date of the token to now and invalidating the token
     }
 
 }

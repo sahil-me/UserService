@@ -18,18 +18,21 @@ public class UserController {
         this.userService = userService;
     }
 
-    @PostMapping("/login")
-    public LoginResponseDto login(@RequestBody LoginRequestDto requestDto) {
-
-        Token token = userService.login(
-                requestDto.getEmail(),
-                requestDto.getPassword()
-        );
-
-        LoginResponseDto responseDto = new LoginResponseDto();
-        responseDto.setToken(token.getValue());
-        return responseDto;
+    @GetMapping("/profile")
+    public String profile() {
+        return "Hello User! You are accessing profile endpoint";
     }
+
+    @GetMapping("/admin")
+    public String admin() {
+        return "Hello User! You are accessing admin endpoint";
+    }
+
+  /*  Take the requests from the users
+    1. signup
+    2. login
+    3. logout
+    4. validate token */
 
     @PostMapping("/signup")
     public UserDto signUp(@RequestBody SignUpRequestDto requestDto) {
@@ -42,6 +45,19 @@ public class UserController {
 
         // Converting from user to UserDto
         return UserDto.from(user);
+    }
+
+    @PostMapping("/login")
+    public LoginResponseDto login(@RequestBody LoginRequestDto requestDto) {
+
+        Token token = userService.login(
+                requestDto.getEmail(),
+                requestDto.getPassword()
+        );
+
+        LoginResponseDto responseDto = new LoginResponseDto();
+        responseDto.setToken(token.getValue());
+        return responseDto;
     }
 
     @GetMapping("/logout")
@@ -59,9 +75,6 @@ public class UserController {
                     HttpStatus.NOT_FOUND
             );
         }
-//        if (user == null) {
-//            return ResponseEntity.notFound().build();
-//        }
 
         return new ResponseEntity<>(
                 UserDto.from(user),
