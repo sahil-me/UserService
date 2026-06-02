@@ -21,3 +21,10 @@ public class Token extends BaseModel {
     private LocalDateTime expiryDateTime;
 
 }
+
+/*
+  1            M
+ User  ----- Token
+  1            1
+
+ */

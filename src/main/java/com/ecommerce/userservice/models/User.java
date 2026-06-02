@@ -20,3 +20,9 @@ public class User extends BaseModel {
     private List<Role> roles;
 
 }
+
+/*
+  1          M
+User  ----- Role
+ M           1
+ */

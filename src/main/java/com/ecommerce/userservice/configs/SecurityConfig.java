@@ -112,6 +112,44 @@ public class SecurityConfig {
 //        return http.build();
 //    }
 
+//    REPLACE Order(2) filter chain with this JWT-protected one
+//    @Bean
+//    @Order(2)
+//    public SecurityFilterChain apiSecurityFilterChain(HttpSecurity http) throws Exception {
+//        http
+//                .securityMatcher("/users/**") // Only match your API endpoints
+//                .authorizeHttpRequests(auth -> auth
+//                        .requestMatchers("/users/signup").permitAll() // Allow signup without token
+//                        .requestMatchers("/users/admin/**").hasAuthority("SCOPE_ADMIN")
+//                        .anyRequest().authenticated() // All other endpoints require JWT
+//                )
+//                .oauth2ResourceServer(oauth2 -> oauth2
+//                        .jwt(Customizer.withDefaults())
+//                )
+//                .sessionManagement(session -> session
+//                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+//                )
+//                .csrf(csrf -> csrf.disable())
+//                .cors(cors -> cors.disable());
+//
+//        return http.build();
+//    }
+
+//    NEW: Add filter chain for login page and static resources
+//    @Bean
+//    @Order(3)
+//    public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
+//        http
+//                .authorizeHttpRequests(auth -> auth
+//                        .requestMatchers("/login", "/error", "/css/**", "/js/**").permitAll()
+//                        .anyRequest().authenticated()
+//                )
+//                .formLogin(Customizer.withDefaults());
+//
+//        return http.build();
+//    }
+
+
     @Bean
     public UserDetailsService userDetailsService() {
         UserDetails userDetails = User.builder()
