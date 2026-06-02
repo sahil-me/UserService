@@ -35,7 +35,7 @@ There are several ways you can contribute to **User Service**.
 * **Bug Fixes**: Identify and fix issues in the existing system.
 * **Security Enhancements**: Strengthen authentication, authorization, password management, and account protection mechanisms.
 * **Performance Optimization**: Improve response times, database interactions, and scalability.
-* **Documentation**: Enhance this README or create new documentation for onboarding contributors.
+* **Documentation**: Enhance the README or create new documentation for onboarding contributors.
 * **Testing**: Write unit, integration, or end-to-end tests to improve system reliability.
 
 > All contributions are equally valuable to the community. 🥰
@@ -77,9 +77,9 @@ If your issue is well written we're already 80% of the way there by the time you
 
 ## Do you want to add documentation?
 
-We're always looking for improvements to the documentation that make it clearer and more accurate. Please let us know how the 
-documentation can be improved, such as typos or any content that is missing, unclear, or inaccurate. We'll be happy to make the 
-changes or help you make a contribution if you're interested!
+We're always looking for improvements to the documentation that make it clearer and more accurate.
+
+Please let us know how the documentation can be improved, such as typos or any content that is missing, unclear, or inaccurate. We'll be happy to make the changes or help you make a contribution if you're interested!
 
 ## Fixing outstanding issues
 
