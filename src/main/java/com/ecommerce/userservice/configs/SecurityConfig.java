@@ -12,7 +12,6 @@ import org.springframework.http.MediaType;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -73,81 +72,45 @@ public class SecurityConfig {
         return http.build();
     }
 
-    @Bean
-    @Order(2)
-    public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
-            throws Exception {
-
-        http
-                .authorizeHttpRequests((authorize) -> authorize
-                        .anyRequest().authenticated()
-                )
-                .csrf().disable()
-                .cors().disable()
-
-//                Form login handles the redirect to the login page from the
-//                authorization server filter chain
-
-                .formLogin(Customizer.withDefaults());
-
-        return http.build();
-    }
-
-//    Test
 //    @Bean
 //    @Order(2)
 //    public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
 //            throws Exception {
+//
 //        http
-//                .authorizeHttpRequests(auth -> auth
-//                        .requestMatchers("/users/signup").permitAll()
-//                        .requestMatchers("/users/login").permitAll()
-//                        .requestMatchers("/users/validate/**").permitAll()
+//                .authorizeHttpRequests((authorize) -> authorize
 //                        .anyRequest().authenticated()
 //                )
 //                .csrf(csrf -> csrf.disable())
 //                .cors(cors -> cors.disable())
+//
+////                Form login handles the redirect to the login page from the
+////                authorization server filter chain
+//
 //                .formLogin(Customizer.withDefaults());
 //
 //        return http.build();
 //    }
 
-//    REPLACE Order(2) filter chain with this JWT-protected one
-//    @Bean
-//    @Order(2)
-//    public SecurityFilterChain apiSecurityFilterChain(HttpSecurity http) throws Exception {
-//        http
-//                .securityMatcher("/users/**") // Only match your API endpoints
-//                .authorizeHttpRequests(auth -> auth
-//                        .requestMatchers("/users/signup").permitAll() // Allow signup without token
-//                        .requestMatchers("/users/admin/**").hasAuthority("SCOPE_ADMIN")
-//                        .anyRequest().authenticated() // All other endpoints require JWT
-//                )
-//                .oauth2ResourceServer(oauth2 -> oauth2
-//                        .jwt(Customizer.withDefaults())
-//                )
-//                .sessionManagement(session -> session
-//                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-//                )
-//                .csrf(csrf -> csrf.disable())
-//                .cors(cors -> cors.disable());
-//
-//        return http.build();
-//    }
 
-//    NEW: Add filter chain for login page and static resources
-//    @Bean
-//    @Order(3)
-//    public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
-//        http
-//                .authorizeHttpRequests(auth -> auth
-//                        .requestMatchers("/login", "/error", "/css/**", "/js/**").permitAll()
-//                        .anyRequest().authenticated()
-//                )
-//                .formLogin(Customizer.withDefaults());
-//
-//        return http.build();
-//    }
+    @Bean
+    @Order(2)
+    public SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http)
+            throws Exception {
+        http
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/users/signup").permitAll()
+                        .requestMatchers("/users/login").permitAll()
+                        .requestMatchers("/users/logout").permitAll()
+                        .requestMatchers("/users/validate/**").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .csrf(csrf -> csrf.disable())
+                .cors(cors -> cors.disable())
+                .formLogin(Customizer.withDefaults());
+
+        return http.build();
+    }
 
 
     @Bean
