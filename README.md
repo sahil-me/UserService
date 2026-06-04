@@ -1,6 +1,6 @@
 # 🛒 E-Commerce Platform 🛍
 
-https://github.com/user-attachments/assets/0af0ee07-2449-4337-91ee-7b428ae951c6
+https://github.com/user-attachments/assets/424d3aa0-1b27-4a42-983c-10bba1e735b6
 
 > 🎥 User Service Demonstration!
 
@@ -31,7 +31,7 @@ https://github.com/user-attachments/assets/0af0ee07-2449-4337-91ee-7b428ae951c6
     - [Part 1: Product Search](#part-1-product-search)
     - [Part 2: Add to Cart](#part-2-add-to-cart)
     - [Part 3: Checkout](#part-3-checkout)
-- [Learning Resources](#learning-resources)
+- [Resources](#resources)
 - [Contributing](#contributing)
 - [License](#license)
 - [Author](#author)
@@ -149,7 +149,7 @@ The project demonstrates real-world backend engineering concepts including RESTf
 
 ---
 
-## Learning Resources
+## Resources
 
 [![Spring Security](https://img.shields.io/badge/Spring-Security-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white)](https://docs.spring.io/spring-security/reference/features/authentication/index.html)
 [![BCrypt](https://img.shields.io/badge/BCrypt-Password%20Hashing-F57C00?style=for-the-badge&logo=auth0&logoColor=white)](https://auth0.com/blog/hashing-in-action-understanding-bcrypt/)
