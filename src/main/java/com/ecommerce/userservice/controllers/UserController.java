@@ -69,6 +69,12 @@ public class UserController {
         );
     }
 
+    @GetMapping("/sample")
+    public void sampleAPI() {
+
+        System.out.println("Got the request in User Service");
+    }
+
 //    @PostMapping("/login")
 //    public LoginResponseDto login(@RequestBody LoginRequestDto requestDto) {
 //
