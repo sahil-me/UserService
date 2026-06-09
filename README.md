@@ -1,5 +1,17 @@
 # 🛒 E-Commerce Platform 🛍
 
+## Infrastructure
+
+[![Spring Cloud | Service Discovery](https://img.shields.io/badge/Spring%20Cloud-Service%20Discovery-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://github.com/sahil-me/ServiceDiscovery)
+[![Spring Cloud | API Gateway](https://img.shields.io/badge/Spring%20Cloud-API%20Gateway-6DB33F?style=for-the-badge&logo=spring&logoColor=white)](https://github.com/sahil-me/ApiGateway)
+
+## Business Services
+
+[![Microservice | User Service](https://img.shields.io/badge/Microservice-User%20Service-007EC6?style=for-the-badge&labelColor=555555&logo=spring&logoColor=white)](https://github.com/sahil-me/UserService)
+[![Microservice | Product Service](https://img.shields.io/badge/Microservice-Product%20Service-007EC6?style=for-the-badge&labelColor=555555&logo=spring&logoColor=white)](https://github.com/sahil-me/ProductService)
+[![Microservice | Payment Service](https://img.shields.io/badge/Microservice-Payment%20Service-007EC6?style=for-the-badge&labelColor=555555&logo=spring&logoColor=white)](https://github.com/sahil-me/PaymentService)
+[![Microservice | Email Service](https://img.shields.io/badge/Microservice-Email%20Service-007EC6?style=for-the-badge&labelColor=555555&logo=spring&logoColor=white)](https://github.com/sahil-me/EmailService)
+
 https://github.com/user-attachments/assets/424d3aa0-1b27-4a42-983c-10bba1e735b6
 
 > 🎥 User Service Demonstration!
@@ -8,6 +20,7 @@ https://github.com/user-attachments/assets/424d3aa0-1b27-4a42-983c-10bba1e735b6
 
 ## Table of Contents
 - [Introduction](#introduction)
+- [Architecture Diagram](#architecture-diagram)
 - [Project Structure](#project-structure)
 - [Tech Stack](#tech-stack)
 - [Product Requirements Document (PRD)](#product-requirements-document-prd)
@@ -46,28 +59,55 @@ The project demonstrates real-world backend engineering concepts including RESTf
 
 ---
 
+## Architecture Diagram
+
+    Client
+       │
+       ▼
+    API Gateway
+       │
+       ▼
+    Service Discovery
+       │
+       ├── User Service
+       ├── Product Service
+       ├── Payment Service
+       └── Email Service
+
+---
+
 ## Project Structure
 
-**
+    E-Commerce-Platform/
+    │
+    ├── ServiceDiscovery/   # Eureka Service Registry
+    ├── ApiGateway/         # API Gateway
+    ├── UserService/        # User Management
+    ├── ProductService/     # Product Catalog Management
+    ├── PaymentService/     # Payment Integration
+    └── EmailService/       # Email Notifications      
 
 ---
 
 ## Tech Stack
 
-| Technology                     | Purpose                              |
-| ------------------------------ | ------------------------------------ |
-| Java 21                        | Programming Language                 |
-| Spring Boot 3.4.6              | Backend Framework                    |
-| Spring Web                     | REST API Development                 |
-| Spring Data JPA                | ORM & Database Access                |
-| MySQL                          | Relational Database                  |
-| Spring Security                | Authentication & Authorization       |
-| OAuth 2.1 Authorization Server | Token-Based Security & Authorization |
-| Apache Commons Lang            | Utility Library                      |
-| Lombok                         | Boilerplate Code Reduction           |
-| Maven                          | Dependency Management & Build Tool   |
-| JUnit 5                        | Unit & Integration Testing           |
-| IntelliJ IDEA                  | Development Environment              |
+| Technology                         | Purpose                                             |
+| ---------------------------------- | --------------------------------------------------- |
+| Java 21                            | Programming Language                                |
+| Spring Boot 3.4.6                  | Backend Framework                                   |
+| Spring Web                         | REST API Development                                |
+| Spring Data JPA                    | ORM & Database Access                               |
+| MySQL                              | Relational Database                                 |
+| Spring Security                    | Authentication & Authorization                      |
+| Spring Authorization Server        | OAuth 2.1 Authorization Server & Token Management   |
+| Apache Commons Lang 3              | Utility Library                                     |
+| Lombok                             | Boilerplate Code Reduction                          |
+| Spring Kafka                       | Event-Driven Messaging & Asynchronous Communication |
+| Spring Cloud Netflix Eureka Client | Service Discovery & Service Registration            |
+| Spring Boot DevTools               | Development Productivity & Automatic Restart        |
+| Maven                              | Dependency Management & Build Tool                  |
+| JUnit 5                            | Unit & Integration Testing                          |
+| IntelliJ IDEA                      | Development Environment                             |
 
 
 ---
